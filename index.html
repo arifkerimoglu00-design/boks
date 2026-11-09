@@ -22,7 +22,7 @@ html,body{height:100%;background:#07080c;color:var(--cream);font-family:'Barlow 
 #pop{top:24%;font-size:44px}#big{top:36%;font-size:92px;letter-spacing:.04em}
 #pop.on{animation:pp .8s ease-out}#big.on{animation:pp 1.6s ease-out}
 @keyframes pp{0%{opacity:0;transform:scale(1.5)}12%{opacity:1;transform:scale(1)}75%{opacity:1}100%{opacity:0;transform:translateY(-14px)}}
-#dbg{position:fixed;right:12px;bottom:10px;font:600 14px monospace;opacity:.6}
+#elhiz{position:fixed;right:12px;bottom:10px;font:600 14px monospace;opacity:.6}
 #vg{position:fixed;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 50%,#000b)}
 #gd{position:fixed;left:0;right:0;bottom:7%;text-align:center;font-weight:800;font-size:26px;letter-spacing:.2em;color:#7fb0ff;text-shadow:0 0 12px var(--blue);opacity:0;transition:opacity .1s}#gd.on{opacity:1}
 #flash{position:fixed;inset:0;background:radial-gradient(transparent 35%,#c8362b);opacity:0}
@@ -42,7 +42,7 @@ button.on{background:var(--cream);color:#14161c}
 <div id="hud">
  <div class="row"><div class="bar" id="pb"><i></i></div><div id="mid"><span id="rd">Raunt 1</span><small id="tm">1:00</small></div><div class="bar" id="ob"><i></i></div></div>
  <div class="bar" id="sb"><i></i></div>
- <div id="vg"></div><div id="dbg"></div><div id="gd">GARD</div><div id="pop"></div><div id="big"></div><div id="flash"></div><div id="msg"></div>
+ <div id="vg"></div><div id="elhiz"></div><div id="gd">GARD</div><div id="pop"></div><div id="big"></div><div id="flash"></div><div id="msg"></div>
  <div id="cam"><video id="v" playsinline muted autoplay></video><canvas id="c" width="320" height="240"></canvas></div>
 </div>
 <div id="ov">
@@ -281,7 +281,7 @@ function frame(t){
  /* arayüz */
  $('#pb i').style.width=G.hp+'%';$('#ob i').style.width=E.hp+'%';$('#sb i').style.width=G.st+'%';
  const sec=Math.max(0,Math.ceil(G.t));$('#tm').textContent=Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0');
- $('#flash').style.opacity=G.fl;FX[0]-=dt;FX[1]-=dt;$('#dbg').textContent='el hızı '+(H[0].vs||0).toFixed(1)+' / '+(H[1].vs||0).toFixed(1)+' (eşik '+CFG.speed+')';$('#gd').classList.toggle('on',!!G.guard&&G.s=='fight');
+ $('#flash').style.opacity=G.fl;FX[0]-=dt;FX[1]-=dt;$('#elhiz').textContent='el hızı '+(H[0].vs||0).toFixed(1)+' / '+(H[1].vs||0).toFixed(1)+' (eşik '+CFG.speed+')';$('#gd').classList.toggle('on',!!G.guard&&G.s=='fight');
  R.render(S,C)}
 requestAnimationFrame(frame);window.__ready=1;
 </script></body></html>
