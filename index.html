@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<title>Son Zil – Boks</title>
+<title>Son Zil – Boks v5</title>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#f2ead8;--red:#c8362b;--gold:#d9a441;--blue:#2d5a9e}
@@ -62,6 +62,7 @@ go.onclick=()=>{
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script type="module">
+if(typeof window.dbg!="function")window.dbg=()=>{};/* MediaPipe'ın dbg() çağrısı bir HTML elemanıyla çakışmasın */
 let PoseLandmarker,FilesetResolver;
 const $=s=>document.querySelector(s),T=THREE,cl=(x,a,b)=>Math.max(a,Math.min(b,x)),lp=(a,b,t)=>a+(b-a)*t,V=(x,y,z)=>new T.Vector3(x,y,z);
 /* ---- ayarlar: yumruk algılama eşikleri ---- */
